@@ -1,1 +1,131 @@
+user@DESKTOP-UN24P7G MINGW64 /c/Program Files (x86)
+$ client, err := NewClient(options.Client().ApplyURI("mongodb://foo:bar@localhost:27017"))
+defer cancel()
+err = client.Connect(ctx)
+if err != nil { return err }bash: syntax error near unexpected token `('
+
+user@DESKTOP-UN24P7G MINGW64 /c/Program Files (x86)
+$ if err != nil { return err }
+> ctx, cancel := context.WithTimeout(context.Background(), 20*time.Second)
+bash: syntax error near unexpected token `('
+
+user@DESKTOP-UN24P7G MINGW64 /c/Program Files (x86)
+$ defer cancel()
+bash: syntax error near unexpected token `('
+
+user@DESKTOP-UN24P7G MINGW64 /c/Program Files (x86)
+$ err = client.Connect(ctx)
+bash: syntax error near unexpected token `('
+
+user@DESKTOP-UN24P7G MINGW64 /c/Program Files (x86)
+$ if err != nil { return err }
+> collection := client.Database("baz").Collection("qux")
+bash: syntax error near unexpected token `('
+
+user@DESKTOP-UN24P7G MINGW64 /c/Program Files (x86)
+$ res, err := collection.InsertOne(context.Background(), bson.M{"hello": "world"})
+bash: syntax error near unexpected token `('
+id := res.InsertedID
+user@DESKTOP-UN24P7G MINGW64 /c/Program Files (x86)
+$ if err != nil { return err }
+> id := res.InsertedID
+> res, err := collection.InsertOne(context.Background(), bson.M{"hello": "world"})
+bash: syntax error near unexpected token `('
+id := res.InsertedID
+user@DESKTOP-UN24P7G MINGW64 /c/Program Files (x86)
+$ if err != nil { return err }
+> id := res.InsertedID
+> result := struct{
+>   Foo string
+>   Bar int32
+> }{}
+> filter := bson.D{{"hello", "world"}}
+> err := collection.FindOne(context.Background(), filter).Decode(&result)
+bash: syntax error near unexpected token `('
+if err != nil { return err }
+// do something with result...
+user@DESKTOP-UN24P7G MINGW64 /c/Program Files (x86)
+$ if err != nil { return err }
+> // do something with result...
+> go get go.mongodb.org/mongo-driver
+> dep ensure --add go.mongodb.org/mongo-driver/mongo \
+> go.mongodb.org/mongo-driver/bson \
+> go.mongodb.org/mongo-driver/mongo/options
+> ackage main
+>
+> import (
+bash: syntax error near unexpected token `newline'
+    "context"
+    "fmt"
+    "log"
+
+    "go.mongodb.org/mongo-driver/bson"
+    "go.mongodb.org/mongo-driver/mongo"
+    "go.mongodb.org/mongo-driver/mongo/options"
+)
+
+// You will be using this Trainer type later in the program
+type Trainer struct {
+    Name string
+    Age  int
+    City string
+}
+
+func main() {
+    // Rest of the code will go here
+}
+user@DESKTOP-UN24P7G MINGW64 /c/Program Files (x86)
+$     "context"
+bash: context: command not found
+
+user@DESKTOP-UN24P7G MINGW64 /c/Program Files (x86)
+$     "fmt"
+    "log"
+
+    "go.mongodb.org/mongo-driver/bson" "go.mongodb.org/mongo-driver/mongo"
+    "go.mongodb.org/mongo-driver/mongo/options"
+)
+
+// You will be using this Trainer type later in the program type Trainer
+struct {
+    Name string Age  int City string
+}
+
+func main() {
+// Set client options
+clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
+    // Rest of the code will go here
+
+}// Set client options clientOptions :=
+options.Client().ApplyURI("mongodb://localhost:27017")
+
+// Connect to MongoDB
+client, err := mongo.Connect(context.TODO(), clientOptions)
+
+if err != nil {
+// Connect to MongoDB client, err := mongo.Connect(context.TODO(),
+clientOptions)
+
+    log.Fatal(err)
+if err != nil {
+}
+    log.Fatal(err)
+
+// Check the connection
+}
+
+err = client.Ping(context.TODO(), nil)
+
+// Check the connection err = client.Ping(context.TODO(), nil)
+
+if err != nil {
+    log.Fatal(err)
+if err != nil {
+}
+
+    log.Fatal(err)
+}
+
+fmt.Println("Connected to MongoDB!")
+ollection := client.Database("test").Collection("trainers")
 
